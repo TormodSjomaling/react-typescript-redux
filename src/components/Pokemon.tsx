@@ -1,8 +1,8 @@
 import React, { FC } from 'react'
-import { PokemonData } from '../store/types'
+import { Pokemon as d} from '../store/types'
 
 interface PokemonProps {
-    data: PokemonData
+    data: d[]
 }
 
 const Pokemon: FC<PokemonProps> = ({ data }) => {
@@ -12,8 +12,8 @@ const Pokemon: FC<PokemonProps> = ({ data }) => {
                 <div className="level" style={{alignItems: 'flex-start'}}>
                     <div className="level-item has-text-centered">
                         <div>
-                            <p className="heading">{data.results.map(a => {
-                                return <li>{a.name} + {a.url}</li>
+                            <p className="heading">{data.map(a => {
+                                return <li>{a.category} + {a.title}</li>
                             })}</p>
                         </div>
                     </div>

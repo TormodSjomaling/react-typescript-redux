@@ -3,12 +3,17 @@ export const SET_LOADING = "SET_LOADING";
 export const SET_ERROR = "SET_ERROR";
 
 export interface Pokemon {
-    name: string;
-    url: string;
+    //name: string
+    id: number,
+    title: string,
+    price: number,
+    description: string,
+    category: string,
+    image: string
 }
 
 export interface PokemonData {
-    results: Pokemon[]
+    data: Pokemon[]
 }
 
 export interface PokemonError {
@@ -16,14 +21,14 @@ export interface PokemonError {
 }
 
 export interface PokemonState {
-    data: PokemonData | null;
+    data: Pokemon[] | null;
     loading: boolean;
     error: string;
 }
 
 interface GetPokemonAction {
     type: typeof GET_POKEMON;
-    payload: PokemonData;
+    payload: Pokemon[];
 }
 
 interface SetLoadingAction {
